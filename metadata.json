@@ -1,0 +1,6 @@
+{
+  "name": "VARA Model v2.0 - Risk Governance & Safety Console",
+  "description": "Institutional Safety Control, Risk Governance, and Cryptographic Audit Console for VARA Model v2.0 Frozen Semantics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

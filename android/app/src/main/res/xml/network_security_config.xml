@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Block all insecure cleartext (HTTP) traffic strictly -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- Enforce Strict Certificate Pinning & TLS 1.3 for VARA Risk Gateway APIs -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">vara-governance.org</domain>
+        <domain includeSubdomains="true">api.vara-governance.org</domain>
+        <pin-set expiration="2027-12-31">
+            <!-- Primary Pin: DigiCert Global Root G2 -->
+            <pin digest="SHA-256">i7WTqTvh0OioIruIfFR4kRqqZJMHM8L+ElEQPIFuaV4=</pin>
+            <!-- Backup Pin: ISRG Root X1 (Let's Encrypt Backup) -->
+            <pin digest="SHA-256">C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M=</pin>
+        </pin-set>
+    </domain-config>
+</network-security-config>

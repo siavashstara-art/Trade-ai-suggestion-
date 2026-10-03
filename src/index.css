@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    font-family: 'Vazirmatn', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080C14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Subtle focus ring for WCAG accessibility */
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid #2DD4BF;
+  outline-offset: 3px;
+}
+
+/* Accessibility & ADHD Neurodiversity Styles */
+.a11y-reduce-motion *,
+.a11y-reduce-motion *::before,
+.a11y-reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+
+.a11y-text-large {
+  font-size: 115%;
+}
+
+.a11y-text-xlarge {
+  font-size: 130%;
+}
+
+.a11y-high-contrast {
+  --tw-border-opacity: 1;
+}
+
+.a11y-high-contrast div[class*="border-slate-800"],
+.a11y-high-contrast div[class*="border-slate-700"] {
+  border-color: #475569 !important;
+}
+
+.a11y-high-contrast .text-slate-400,
+.a11y-high-contrast .text-slate-500 {
+  color: #CBD5E1 !important;
+}
+
+.a11y-high-contrast .text-slate-300 {
+  color: #F8FAFC !important;
+}
+
+/* ADHD Calm Mode: softens aggressive borders, maximizes spacing, eliminates jitter */
+.a11y-adhd-focus {
+  letter-spacing: 0.015em;
+  line-height: 1.7;
+}
+
+/* Screen reader announcement utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
